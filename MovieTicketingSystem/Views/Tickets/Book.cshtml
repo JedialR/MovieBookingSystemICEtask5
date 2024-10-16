@@ -1,0 +1,20 @@
+﻿@model TicketModel
+
+<h2>Book Tickets</h2>
+
+<form asp-action="Book">
+    <input type="hidden" asp-for="ShowtimeId" />
+    <div class="form-group">
+        <label asp-for="CustomerName" class="control-label"></label>
+        <input asp-for="CustomerName" class="form-control" />
+        <span asp-validation-for="CustomerName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumberOfTickets" class="control-label"></label>
+        <input asp-for="NumberOfTickets" class="form-control" />
+        <span asp-validation-for="NumberOfTickets" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Book</button>
+</form>
+<a asp-action="Index" class="btn btn-secondary">Back to Showtimes</a>
+

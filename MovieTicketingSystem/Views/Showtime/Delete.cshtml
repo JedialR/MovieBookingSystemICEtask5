@@ -1,0 +1,22 @@
+﻿@model ShowtimeModel
+
+<h2>Delete Showtime</h2>
+
+<div>
+    <h4>Are you sure you want to delete this?</h4>
+    <div>
+        <strong>Movie ID:</strong> @Model.MovieId
+    </div>
+    <div>
+        <strong>Showtime:</strong> @Model.Showtime.ToString("g")
+    </div>
+    <div>
+        <strong>Available Seats:</strong> @Model.AvailableSeats
+    </div>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

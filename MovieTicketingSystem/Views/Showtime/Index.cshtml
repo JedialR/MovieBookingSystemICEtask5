@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ShowtimeModel>
+
+<h2>Showtimes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Movie ID</th>
+            <th>Showtime</th>
+            <th>Available Seats</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MovieId</td>
+                <td>@item.Showtime.ToString("g")</td>
+                <td>@item.AvailableSeats</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-success">Create New Showtime</a>
